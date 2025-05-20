@@ -1,0 +1,19 @@
+<div class="card">
+  <%# プロトタイプの画像を表示（Active Storageを使用している場合） %>
+  <% if prototype.image.attached? %>
+    <%= link_to image_tag(prototype.image, class: :card__img), prototype_path(prototype) %>
+  <% end %>
+
+  <div class="card__body">
+    <%# タイトルへのリンク（詳細ページへ） %>
+    <%= link_to prototype.title, prototype_path(prototype), class: :card__title %>
+
+    <%# キャッチコピーの表示 %>
+    <p class="card__summary">
+      <%= prototype.catch_copy %>
+    </p>
+
+    <%# 投稿者の名前（userに関連付いている前提） %>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user), class: :card__user %>
+  </div>
+</div>
