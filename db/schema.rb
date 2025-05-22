@@ -49,13 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_15_080223) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "posts", charset: "utf8mb3", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "prototypes", charset: "utf8mb3", force: :cascade do |t|
     t.string "title", null: false
     t.text "catch_copy", null: false
